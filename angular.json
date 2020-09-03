@@ -24,9 +24,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/css/sb-admin-2.min.css",
+              "src/assets/css/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/vendor/bootstrap/js/bootstrap.bundle.js",
+              "src/assets/js/vendor/jquery-easing/jquery.easing.min.js",
+              "src/assets/js/sb-admin-2.min.js",
+              "src/assets/js/vendor/chart.js/Chart.min.js",
+              "src/assets/js/chart-area-demo.js",
+              "src/assets/js/chart-pie-demo.js"
+            ]
           },
           "configurations": {
             "production": {

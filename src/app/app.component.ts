@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare var $: any 
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-bs-admin';
+
+  ngOnInit(): void {
+    $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+      $("body").toggleClass("sidebar-toggled");
+      $(".sidebar").toggleClass("toggled");
+      if ($(".sidebar").hasClass("toggled")) {
+        $('.sidebar .collapse').collapse('hide');
+      };
+    });
+  }
+
 }
