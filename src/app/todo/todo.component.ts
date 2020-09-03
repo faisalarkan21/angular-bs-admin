@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppartementService } from './AppartementService';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,6 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  constructor() { }
-
+  form;
+  constructor(
+    private myRoute: Router,
+    public auth: AuthService, private appartementService: AppartementService) {
+  
+      console.log(auth.isLoggedIn())
+  }
+  ngOnInit() {
+  }
+  login() {
+    
+    this.appartementService.postAuth().subscribe((data) => {
+      this.auth.sendToken(data)
+    })
+  }
 }

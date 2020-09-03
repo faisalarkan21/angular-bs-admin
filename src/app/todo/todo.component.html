@@ -293,5 +293,11 @@
 
       </div>
     </div>
-
+    <p color="primary">
+      <button  routerLink="/">Home</button>
+      <button *ngIf="!auth.isLoggedIn()" type="submit" color="primary" (click)="login()">Login</button>
+      <!-- <button  *ngIf="!auth.isLoggedIn()" routerLink="/register">Register</button> -->
+      <button  *ngIf="auth.isLoggedIn()" (click)="auth.logout()">Logout</button>
+      
+    </p>
   </div>

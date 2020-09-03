@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 declare var $: any 
 
 @Component({
@@ -8,6 +10,11 @@ declare var $: any
 })
 export class AppComponent {
   title = 'angular-bs-admin';
+
+    constructor(public auth: AuthService, router:Router) {
+      console.log(auth.isLoggedIn())
+     }
+
 
   ngOnInit(): void {
     $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
