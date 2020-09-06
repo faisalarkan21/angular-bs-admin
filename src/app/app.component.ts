@@ -11,19 +11,5 @@ declare var $: any
 export class AppComponent {
   title = 'angular-bs-admin';
 
-    constructor(public auth: AuthService, router:Router) {
-      console.log(auth.isLoggedIn())
-     }
-
-
-  ngOnInit(): void {
-    $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
-      $("body").toggleClass("sidebar-toggled");
-      $(".sidebar").toggleClass("toggled");
-      if ($(".sidebar").hasClass("toggled")) {
-        $('.sidebar .collapse').collapse('hide');
-      };
-    });
-  }
 
 }

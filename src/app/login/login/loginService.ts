@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AppartementService {
+export class LoginService {
 
   private BASE_URL = 'https://5d60ae24c2ca490014b27087.mockapi.io/api/v1';
 
@@ -30,10 +30,10 @@ export class AppartementService {
         'Something bad happened; please try again later.');
     };
 
-    postAuth (){
+    postAuth (email, password){
         var formData: any = new FormData();
-        formData.append("email", 'faisalarkan21@gmail.com');
-        formData.append("password",   'testing123');
+        formData.append("email", email);
+        formData.append("password",   password);
          return this.http.post('http://localhost:8080/api/login',formData);
     }
 
