@@ -1,29 +1,25 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './layout/layout.component';
-import { AuthGuard } from './auth.guard';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { LayoutComponent } from "./layout/layout.component";
+import { AuthGuard } from "./services/auth.guard";
+import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 export const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
+    path: "",
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: "",
         loadChildren: () =>
-          import('./layout/layout.module').then((m) => m.LayoutModule),
+          import("./layout/layout.module").then((m) => m.LayoutModule),
       },
     ],
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-    path: '**',
-    redirectTo: 'login',
+    path: "**",
+    component: PageNotFoundComponent,
   },
 ];
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from './utils/auth';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 declare var $: any 
 

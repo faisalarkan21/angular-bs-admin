@@ -5,23 +5,25 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuard } from './auth.guard';
-import { AuthService } from './auth.service';
+import { LoginModule } from './auth/login.module';
 import { LayoutModule } from './layout/layout.module';
-import { LoginModule } from './login/login.module';
+import { AuthGuard } from './services/auth.guard';
+import { AuthService } from './utils/auth';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
     LoginModule,
+    AppRoutingModule,
     LayoutModule,
+    HttpClientModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

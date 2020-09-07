@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class ApiService {
 
   private BASE_URL = 'https://5d60ae24c2ca490014b27087.mockapi.io/api/v1';
 
@@ -36,5 +36,9 @@ export class LoginService {
         formData.append("password",   password);
          return this.http.post('http://localhost:8080/api/login',formData);
     }
+
+    getAgency (){
+       return this.http.get('http://localhost:8080/api/getAgency');
+  }
 
 }
